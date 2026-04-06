@@ -66,13 +66,13 @@ export default function Home() {
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
                   Yusuf
                   <br />
-                  <span className="text-muted-foreground">Macaspac</span>
+                  <span className="text-muted-foreground">Barış</span>
                 </h1>
               </div>
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Frontend Developer crafting digital experiences at the intersection of
+                  Psychology, marketing, entrepreneur, organization. Adapting with world and experiences at the intersection of
                   <span className="text-foreground"> design</span>,<span className="text-foreground"> technology</span>,
                   and
                   <span className="text-foreground"> user experience</span>.
