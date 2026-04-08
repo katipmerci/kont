@@ -147,14 +147,7 @@ export default function Home() {
                   role: "Ege University",
                   company: "Sociology",
                   description: "I got accepted to a four-year university program. However, after the first year, I decided to continue my education abroad and dropped out. This year, we organized a social project with the municipality, and I became a volunteer team leader at the EÇEV Association.",
-                  tech: ["Articles", "Social Psychology", "PostgreSQL"],
-                },
-                {
-                  year: "2021",
-                  role: "Software Engineer",
-                  company: "Airbnb",
-                  description: "Created booking flow optimizations and host management tools.",
-                  tech: ["React", "Node.js", "MySQL"],
+                  tech: ["Articles", "Social Psychology"],
                 },
               ].map((job, index) => (
                 <div
@@ -197,30 +190,30 @@ export default function Home() {
           className="min-h-screen py-20 sm:py-32 opacity-0"
         >
           <div className="space-y-12 sm:space-y-16">
-            <h2 className="text-3xl sm:text-4xl font-light">Active Projects</h2>
+            <h2 className="text-3xl sm:text-4xl font-light">Active Fields</h2>
 
             <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
               {[
                 {
-                  title: "Kontkatip",
-                  excerpt: "Exploring how AI and automation are reshaping the way we build for the web.",
+                  title: "Vizja University",
+                  excerpt: "Full-time student at Vizja University.",
                   date: "2024 - ",
                   readTime: "5 min",
                 },
                 {
-                  title: "Design Systems at Scale",
+                  title: "Kontkatip",
                   excerpt: "Lessons learned from building and maintaining design systems across multiple products.",
                   date: "Nov 2024",
                   readTime: "8 min",
                 },
                 {
-                  title: "Performance-First Development",
+                  title: "Drak Games",
                   excerpt: "Why performance should be a first-class citizen in your development workflow.",
                   date: "Oct 2024",
                   readTime: "6 min",
                 },
                 {
-                  title: "The Art of Code Review",
+                  title: "Barışlar",
                   excerpt: "Building better software through thoughtful and constructive code reviews.",
                   date: "Sep 2024",
                   readTime: "4 min",
@@ -280,7 +273,7 @@ export default function Home() {
                     href="mailto:test@example.com"
                     className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
                   >
-                    <span className="text-base sm:text-lg">test@example.com</span>
+                    <span className="text-base sm:text-lg">iletisimkaiser@gmail.com</span>
                     <svg
                       className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
