@@ -81,9 +81,9 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    Available for work
+                    Active
                   </div>
-                  <div>Philippines</div>
+                  <div>Warsaw</div>
                 </div>
               </div>
             </div>
@@ -92,16 +92,16 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground font-mono">CURRENTLY</div>
                 <div className="space-y-2">
-                  <div className="text-foreground">Frontend Developer</div>
-                  <div className="text-muted-foreground">@ Hububble</div>
-                  <div className="text-xs text-muted-foreground">2021 — Present</div>
+                  <div className="text-foreground">Psychology Student</div>
+                  <div className="text-muted-foreground">@kontkatip</div>
+                  <div className="text-xs text-muted-foreground">2024 — Present</div>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground font-mono">FOCUS</div>
                 <div className="flex flex-wrap gap-2">
-                  {["HubL", "React", "TypeScript", "HubSpot CMS", "Node.js"].map((skill) => (
+                  {["Psychology", "Marketing", "Vibe Coding", "Entrepreneur", "Leader"].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
@@ -122,35 +122,35 @@ export default function Home() {
         >
           <div className="space-y-12 sm:space-y-16">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-              <h2 className="text-3xl sm:text-4xl font-light">Selected Work</h2>
-              <div className="text-sm text-muted-foreground font-mono">2019 — 2025</div>
+              <h2 className="text-3xl sm:text-4xl font-light">Chronology</h2>
+              <div className="text-sm text-muted-foreground font-mono">2022 — 2026</div>
             </div>
 
             <div className="space-y-8 sm:space-y-12">
               {[
                 {
+                  year: "2024",
+                  role: "Vizja University",
+                  company: "Psychology",
+                  description: "I worked in the field of EEG, conducted case studies, collected data, and gave presentations.",
+                  tech: ["EEG", "Statistics", "Case Study"],
+                },
+                {
                   year: "2023",
-                  role: "Senior Frontend Engineer",
-                  company: "Vercel",
-                  description: "Leading frontend architecture for developer tools and AI-powered features.",
-                  tech: ["React", "TypeScript", "Next.js"],
+                  role: "SWPS University",
+                  company: "Preparation",
+                  description: "I completed a one-year English preparatory course and received a B2 certificate.",
+                  tech: ["English"],
                 },
                 {
                   year: "2022",
-                  role: "Frontend Engineer",
-                  company: "Linear",
-                  description: "Built performant interfaces for project management and team collaboration.",
-                  tech: ["React", "GraphQL", "Framer Motion"],
+                  role: "Ege University",
+                  company: "Sociology",
+                  description: "I got accepted to a four-year university program. However, after the first year, I decided to continue my education abroad and dropped out. This year, we organized a social project with the municipality, and I became a volunteer team leader at the EÇEV Association.",
+                  tech: ["Articles", "Social Psychology", "PostgreSQL"],
                 },
                 {
                   year: "2021",
-                  role: "Full Stack Developer",
-                  company: "Stripe",
-                  description: "Developed payment infrastructure and merchant-facing dashboard features.",
-                  tech: ["Ruby", "React", "PostgreSQL"],
-                },
-                {
-                  year: "2019",
                   role: "Software Engineer",
                   company: "Airbnb",
                   description: "Created booking flow optimizations and host management tools.",
@@ -197,14 +197,14 @@ export default function Home() {
           className="min-h-screen py-20 sm:py-32 opacity-0"
         >
           <div className="space-y-12 sm:space-y-16">
-            <h2 className="text-3xl sm:text-4xl font-light">Recent Thoughts</h2>
+            <h2 className="text-3xl sm:text-4xl font-light">Active Projects</h2>
 
             <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
               {[
                 {
-                  title: "The Future of Web Development",
+                  title: "Kontkatip",
                   excerpt: "Exploring how AI and automation are reshaping the way we build for the web.",
-                  date: "Dec 2024",
+                  date: "2024 - ",
                   readTime: "5 min",
                 },
                 {
@@ -295,14 +295,14 @@ export default function Home() {
             </div>
 
             <div className="space-y-6 sm:space-y-8">
-              <div className="text-sm text-muted-foreground font-mono">ELSEWHERE</div>
+              <div className="text-sm text-muted-foreground font-mono">OTHERS</div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { name: "GitHub", handle: "@felixmacaspac", url: "#" },
-                  { name: "v0.dev", handle: "@felixmacaspac", url: "#" },
-                  { name: "HubSpot Community", handle: "@felixmacaspac", url: "#" },
-                  { name: "LinkedIn", handle: "felixmacaspac", url: "#" },
+                  { name: "Linkedin", handle: "Yusuf Barış", url: "#" },
+                  { name: "GitHub", handle: "@katipmerci", url: "#" },
+                  { name: "Instagram", handle: "@kontkatip", url: "#" },
+                  { name: "Instagram", handle: "@katipmerci", url: "#" },
                 ].map((social) => (
                   <Link
                     key={social.name}
@@ -325,8 +325,8 @@ export default function Home() {
         <footer className="py-12 sm:py-16 border-t border-border">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
             <div className="space-y-2">
-              <div className="text-sm text-muted-foreground">© 2025 Felix Macaspac. All rights reserved.</div>
-              <div className="text-xs text-muted-foreground">Built with v0.dev by Felix Macaspac</div>
+              <div className="text-sm text-muted-foreground">© 2026 Kontkatip. All rights reserved.</div>
+              <div className="text-xs text-muted-foreground">Built with v0.dev by Yusuf Barış</div>
             </div>
 
             <div className="flex items-center gap-4">
