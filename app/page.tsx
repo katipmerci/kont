@@ -208,7 +208,7 @@ export default function Home() {
                 },
                 {
                   title: "Writer in Medium & Asialogy",
-                  excerpt: "https://www.asialogy.com/author/merci/ and https://medium.com/@barisyusuf",
+                  excerpt: "Psychology & Culture articles: www.asialogy.com/author/merci/ and Psychology & Marketing articles: medium.com/@barisyusuf",
                   date: "2023 - ",
                   readTime: "3 Years",
                 },
