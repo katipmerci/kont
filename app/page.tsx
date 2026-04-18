@@ -72,10 +72,10 @@ export default function Home() {
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Psychology, marketing, entrepreneur, organization. Adapting with world and experiences at the intersection of
-                  <span className="text-foreground"> design</span>,<span className="text-foreground"> technology</span>,
+                  Psychology, entrepreneurship, marketing, and management. A person who combines .
+                  <span className="text-foreground"> design</span>,<span className="text-foreground"> natural</span>,
                   and
-                  <span className="text-foreground"> user experience</span>.
+                  <span className="text-foreground"> artificial intelligence</span>.
                 </p>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
@@ -197,26 +197,26 @@ export default function Home() {
                 {
                   title: "Vizja University",
                   excerpt: "Full-time student at Vizja University.",
-                  date: "2024 - ",
-                  readTime: "5 min",
+                  date: "2024 - 2027",
+                  readTime: "3 Years",
                 },
                 {
                   title: "Kontkatip",
-                  excerpt: "Lessons learned from building and maintaining design systems across multiple products.",
-                  date: "Nov 2024",
-                  readTime: "8 min",
+                  excerpt: "Actively involved in production within the app and game industry.",
+                  date: "2024 - ",
+                  readTime: "2 Years",
                 },
                 {
-                  title: "Drak Games",
-                  excerpt: "Why performance should be a first-class citizen in your development workflow.",
-                  date: "Oct 2024",
-                  readTime: "6 min",
+                  title: "Writer in Medium & Asialogy",
+                  excerpt: "https://www.asialogy.com/author/merci/ and https://medium.com/@barisyusuf",
+                  date: "2023 - ",
+                  readTime: "3 Years",
                 },
                 {
-                  title: "Barışlar",
-                  excerpt: "Building better software through thoughtful and constructive code reviews.",
-                  date: "Sep 2024",
-                  readTime: "4 min",
+                  title: "Coming Soon",
+                  excerpt: "New business deals and ventures continue to be established.",
+                  date: "2026",
+                  readTime: "Present",
                 },
               ].map((post, index) => (
                 <article
