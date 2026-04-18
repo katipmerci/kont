@@ -73,7 +73,7 @@ export default function Home() {
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   Psychology, entrepreneurship, marketing, and management. A person who combines
-                  ,<span className="text-foreground"> natural</span>,
+                <span className="text-foreground"> natural</span>,
                   and
                   <span className="text-foreground"> artificial intelligence</span>.
                 </p>
