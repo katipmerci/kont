@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en" id="html-root">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Kontkatip — Yusuf Barış</title>
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 
@@ -580,6 +581,41 @@ body::after{
   .nav-cta{display:none}
   section{padding:3rem 1.25rem}
 }
+
+/* ===== LANGUAGE TOGGLE ===== */
+.lang-toggle{
+  position:fixed;bottom:2rem;right:2rem;z-index:200;
+  display:flex;align-items:center;gap:0;
+  border:1px solid var(--line2);
+  overflow:hidden;
+}
+.lang-btn{
+  padding:.45rem .9rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted2);background:var(--bg2);
+  border:none;cursor:pointer;transition:all .25s;
+}
+.lang-btn.active{background:var(--accent2);color:var(--bg);font-weight:600}
+.lang-btn:hover:not(.active){color:var(--accent)}
+
+/* Hide/show by language */
+[data-lang]{transition:opacity .3s ease}
+html[lang="tr"] [data-lang="en"]{display:none}
+html[lang="en"] [data-lang="tr"]{display:none}
+html[lang="tr"] [data-lang="tr"]{display:inline}
+html[lang="en"] [data-lang="en"]{display:inline}
+/* For block elements */
+html[lang="tr"] div[data-lang="en"],
+html[lang="tr"] p[data-lang="en"],
+html[lang="tr"] h1[data-lang="en"],
+html[lang="tr"] h2[data-lang="en"],
+html[lang="tr"] blockquote[data-lang="en"]{display:none}
+html[lang="en"] div[data-lang="tr"],
+html[lang="en"] p[data-lang="tr"],
+html[lang="en"] h1[data-lang="tr"],
+html[lang="en"] h2[data-lang="tr"],
+html[lang="en"] blockquote[data-lang="tr"]{display:none}
 </style>
 </head>
 <body>
@@ -587,14 +623,21 @@ body::after{
 <div id="cur"></div>
 <div id="ring"></div>
 
+<!-- Language Toggle -->
+<div class="lang-toggle">
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</button>
+</div>
+
+
 <!-- NAV -->
 <nav class="nav">
   <a href="#" class="logo-script">kontkatip</a>
   <div class="nav-right">
-    <a href="#bio" class="nav-link">Biyografi</a>
-    <a href="#startups" class="nav-link">Girişimler</a>
-    <a href="#portfolio" class="nav-link">İşler</a>
-    <a href="#contact" class="nav-cta">İletişim</a>
+    <a href="#bio" class="nav-link"><span data-lang="tr">Biyografi</span><span data-lang="en">Biography</span></a>
+    <a href="#startups" class="nav-link"><span data-lang="tr">Girişimler</span><span data-lang="en">Startups</span></a>
+    <a href="#portfolio" class="nav-link"><span data-lang="tr">İşler</span><span data-lang="en">Work</span></a>
+    <a href="#contact" class="nav-cta"><span data-lang="tr">İletişim</span><span data-lang="en">Contact</span></a>
   </div>
 </nav>
 
@@ -622,15 +665,13 @@ body::after{
   </div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow">Varşova, Polonya &nbsp;·&nbsp; 2024</div>
+    <div class="hero-eyebrow">Warsaw, Poland &nbsp;·&nbsp; 2024</div>
     <h1 class="hero-name">
       Yusuf<br>
       <em>Barış</em>
     </h1>
     <p class="hero-desc">
-      Psikoloji öğrencisi, girişimci, yazar.<br>
-      İnsan zihnini ve dijital sistemleri aynı merakla inceleyen bir zihin.
-      Varşova'dan dünyaya.
+      <span data-lang="tr">Psikoloji öğrencisi, girişimci, yazar.<br>İnsan zihnini ve dijital sistemleri aynı merakla inceleyen bir zihin. Varşova'dan dünyaya.</span><span data-lang="en">Psychology student, entrepreneur, writer.<br>Exploring the human mind and digital systems with the same curiosity. From Warsaw to the world.</span>
     </p>
     <div class="hero-tags">
       <span class="htag">Psikoloji</span>
@@ -640,7 +681,7 @@ body::after{
     </div>
     <div class="hero-scroll">
       <div class="scroll-line"></div>
-      Aşağı Kaydır
+      <span data-lang="tr">Aşağı Kaydır</span><span data-lang="en">Scroll Down</span>
     </div>
   </div>
 </section>
@@ -649,36 +690,36 @@ body::after{
 <div class="hr"></div>
 <section id="bio">
   <div class="section-inner">
-    <div class="sec-label">Biyografi <span>/ 01</span></div>
+    <div class="sec-label"><span data-lang="tr">Biyografi</span><span data-lang="en">Biography</span> <span>/ 01</span></div>
     <div class="bio-layout">
       <div>
         <blockquote class="bio-quote">
-          "İnsan neden böyle davranır?" sorusu benim için hiçbir zaman basit bir merak olmadı.
+          <span data-lang="tr">"İnsan neden böyle davranır?" sorusu benim için hiçbir zaman basit bir merak olmadı.</span><span data-lang="en">"Why do people behave this way?" was never a simple curiosity for me.</span>
         </blockquote>
-        <p class="bio-p">İstanbul'da doğdum. 18 yaşında Ege Üniversitesi'nde Sosyoloji okumaya başladım; ama bu benim için yeterli gelmedi. Bir yıl sonra, 19 yaşında, her şeyi bırakıp Varşova'ya taşındım.</p>
-        <p class="bio-p">2023'te SWPS Üniversitesi'nde İngilizce eğitimi aldım, ardından 2024'te Vizja Üniversitesi'nde Psikoloji bölümüne başladım. 2027 Haziran'da mezun olacağım. Bu süreç boyunca akademinin sınırları dışına çıkarak yapay zeka ve pazarlama alanlarında kendimi derinlemesine geliştirdim.</p>
-        <p class="bio-p">Bugün psikoloji bilgimi yapay zeka ve girişimcilikle birleştirerek; insan odaklı, anlamlı dijital ürünler ve sistemler tasarlamaya çalışıyorum. Kontkatip, bu yolculuğun adı.</p>
+        <p class="bio-p"><span data-lang="tr">İstanbul'da doğdum. 18 yaşında Ege Üniversitesi'nde Sosyoloji okumaya başladım; ama bu benim için yeterli gelmedi. Bir yıl sonra, 19 yaşında, her şeyi bırakıp Varşova'ya taşındım.</span><span data-lang="en">I was born in Istanbul. At 18, I began studying Sociology at Ege University — but it wasn't enough. A year later, at 19, I left everything behind and moved to Warsaw.</span></p>
+        <p class="bio-p"><span data-lang="tr">2023'te SWPS Üniversitesi'nde İngilizce eğitimi aldım, ardından 2024'te Vizja Üniversitesi'nde Psikoloji bölümüne başladım. 2027 Haziran'da mezun olacağım. Bu süreç boyunca akademinin sınırları dışına çıkarak yapay zeka ve pazarlama alanlarında kendimi derinlemesine geliştirdim.</span><span data-lang="en">In 2023, I studied English preparation at SWPS University, then began Psychology at Vizja University in 2024. I graduate in June 2027. Throughout this journey, I pushed beyond academia to develop myself deeply in AI and marketing.</span></p>
+        <p class="bio-p"><span data-lang="tr">Bugün psikoloji bilgimi yapay zeka ve girişimcilikle birleştirerek; insan odaklı, anlamlı dijital ürünler ve sistemler tasarlamaya çalışıyorum. Kontkatip, bu yolculuğun adı.</span><span data-lang="en">Today I combine psychology with AI and entrepreneurship to design meaningful, human-centered digital products and systems. Kontkatip is the name of this journey.</span></p>
 
-        <div class="timeline-title">Yolculuk</div>
+        <div class="timeline-title"><span data-lang="tr">Yolculuk</span><span data-lang="en">Journey</span></div>
         <div class="tl">
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2004</div><div class="tl-t">Başlangıç</div><div class="tl-d">İstanbul'da doğdum. Merak, doğuştan gelen bir ihtiyaç.</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2022</div><div class="tl-t">Ege Üniversitesi</div><div class="tl-d">Sosyoloji bölümüne başladım. Bir yıl sonra bunun benim için yetmediğini anladım.</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2023</div><div class="tl-t">SWPS Üniversitesi</div><div class="tl-d">Varşova'ya taşındım. SWPS'te İngilizce hazırlık eğitimi aldım.</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2024</div><div class="tl-t">Vizja Üniversitesi</div><div class="tl-d">Psikoloji bölümüne başladım. Yapay zeka ile kesişimini keşfettim.</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2026</div><div class="tl-t">Kontkatip</div><div class="tl-d">Kendi markamı kurdum. Bir düşünce biçiminin adı.</div></div>
-          <div class="tl-item" style="margin-bottom:0"><div class="tl-dot" style="background:var(--accent2)"></div><div class="tl-yr">→</div><div class="tl-t">Süregelen</div><div class="tl-d">Öğreniyorum, inşa ediyorum, anlıyorum.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2004</div><div class="tl-t"><span data-lang="tr">Başlangıç</span><span data-lang="en">Beginning</span></div><div class="tl-d"><span data-lang="tr">İstanbul'da doğdum. Merak, doğuştan gelen bir ihtiyaç.</span><span data-lang="en">Born in Istanbul. Curiosity was never a choice — it was a necessity.</span></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2022</div><div class="tl-t"><span data-lang="tr">Ege Üniversitesi</span><span data-lang="en">Ege University</span></div><div class="tl-d"><span data-lang="tr">Sosyoloji bölümüne başladım. Bir yıl sonra bunun benim için yetmediğini anladım.</span><span data-lang="en">Started Sociology. A year later, I realized it wasn't enough for me.</span></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2023</div><div class="tl-t"><span data-lang="tr">SWPS Üniversitesi</span><span data-lang="en">SWPS University</span></div><div class="tl-d"><span data-lang="tr">Varşova'ya taşındım. SWPS'te İngilizce hazırlık eğitimi aldım.</span><span data-lang="en">Moved to Warsaw. Completed English preparation at SWPS.</span></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2024</div><div class="tl-t"><span data-lang="tr">Vizja Üniversitesi</span><span data-lang="en">Vizja University</span></div><div class="tl-d"><span data-lang="tr">Psikoloji bölümüne başladım. Yapay zeka ile kesişimini keşfettim.</span><span data-lang="en">Started Psychology. Discovered its intersection with AI.</span></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2026</div><div class="tl-t"><span data-lang="tr">Kontkatip</span><span data-lang="en">Kontkatip</span></div><div class="tl-d"><span data-lang="tr">Kendi markamı kurdum. Bir düşünce biçiminin adı.</span><span data-lang="en">Founded my own brand. The name of a way of thinking.</span></div></div>
+          <div class="tl-item" style="margin-bottom:0"><div class="tl-dot" style="background:var(--accent2)"></div><div class="tl-yr">→</div><div class="tl-t"><span data-lang="tr">Süregelen</span><span data-lang="en">Ongoing</span></div><div class="tl-d"><span data-lang="tr">Öğreniyorum, inşa ediyorum, anlıyorum.</span><span data-lang="en">Learning, building, understanding.</span></div></div>
         </div>
       </div>
 
       <div>
         <div class="bio-info">
-          <div class="bi-row"><span class="bi-key">İsim</span><span class="bi-val">Yusuf Barış</span></div>
-          <div class="bi-row"><span class="bi-key">Konum</span><span class="bi-val">Varşova, Polonya</span></div>
-          <div class="bi-row"><span class="bi-key">Eğitim</span><span class="bi-val">Psikoloji Lisans (2027)</span></div>
-          <div class="bi-row"><span class="bi-key">Üniversite</span><span class="bi-val">Vizja Üniversitesi</span></div>
-          <div class="bi-row"><span class="bi-key">Diller</span><span class="bi-val">Türkçe · İngilizce · Lehçe</span></div>
-          <div class="bi-row"><span class="bi-key">Alan</span><span class="bi-val">Psikoloji × Yapay Zeka</span></div>
-          <div class="bi-row"><span class="bi-key">Statü</span><span class="bi-val" style="color:var(--accent2)">İşbirliğine Açık</span></div>
+          <div class="bi-row"><span class="bi-key"><span data-lang="tr">İsim</span><span data-lang="en">Name</span></span><span class="bi-val">Yusuf Barış</span></div>
+          <div class="bi-row"><span class="bi-key"><span data-lang="tr">Konum</span><span data-lang="en">Location</span></span><span class="bi-val">Varşova, Polonya</span></div>
+          <div class="bi-row"><span class="bi-key"><span data-lang="tr">Eğitim</span><span data-lang="en">Education</span></span><span class="bi-val">Psikoloji Lisans (2027)</span></div>
+          <div class="bi-row"><span class="bi-key"><span data-lang="tr">Üniversite</span><span data-lang="en">University</span></span><span class="bi-val">Vizja Üniversitesi</span></div>
+          <div class="bi-row"><span class="bi-key"><span data-lang="tr">Diller</span><span data-lang="en">Languages</span></span><span class="bi-val">Türkçe · İngilizce · Lehçe</span></div>
+          <div class="bi-row"><span class="bi-key"><span data-lang="tr">Alan</span><span data-lang="en">Field</span></span><span class="bi-val">Psikoloji × Yapay Zeka</span></div>
+          <div class="bi-row"><span class="bi-key"><span data-lang="tr">Statü</span><span data-lang="en">Status</span></span><span class="bi-val" style="color:var(--accent2)"><span data-lang="tr">İşbirliğine Açık</span><span data-lang="en">Open to Collaboration</span></span></div>
         </div>
       </div>
     </div>
@@ -689,7 +730,7 @@ body::after{
 <div class="hr"></div>
 <section id="startups" style="background:var(--bg2)">
   <div class="section-inner">
-    <div class="sec-label">Girişimler <span>/ 02</span></div>
+    <div class="sec-label"><span data-lang="tr">Girişimler</span><span data-lang="en">Startups</span> <span>/ 02</span></div>
     <h2 class="sec-title" style="margin-bottom:4rem">Start <em>Up</em></h2>
 
     <div class="startups-grid">
@@ -698,10 +739,10 @@ body::after{
       <div class="startup-card startup-featured">
         <div class="sf-left sc-inner" style="position:relative">
           <div style="position:absolute;right:0;top:0;font-family:'Cormorant Garamond',serif;font-size:7rem;font-weight:300;color:rgba(200,185,154,.04);line-height:1;pointer-events:none">01</div>
-          <div class="sc-status"><div class="sc-dot"></div>Aktif · Büyüyor</div>
+          <div class="sc-status"><div class="sc-dot"></div><span data-lang="tr">Aktif · Büyüyor</span><span data-lang="en">Active · Growing</span></div>
           <div class="sc-name" style="font-size:2.8rem">Kontkatip</div>
-          <div class="sc-tag">Psikoloji · Teknoloji · Otomasyon · 2026</div>
-          <p class="sc-desc" style="max-width:32rem">Değişmekte olan dünyanın ihtiyaçlarını analiz etmek ve çözmek için kurulmuş bir şirket. Amacı, düzenin kaosa doğru değil "Barış"tan yana değişimine katkı sağlamak. Psikoloji, teknoloji, verimlilik ve otomasyon sistemlerini bünyesinde barındıran bir oluşum.</p>
+          <div class="sc-tag"><span data-lang="tr">Psikoloji · Teknoloji · Otomasyon · 2026</span><span data-lang="en">Psychology · Technology · Automation · 2026</span></div>
+          <p class="sc-desc" style="max-width:32rem"><span data-lang="tr">Değişmekte olan dünyanın ihtiyaçlarını analiz etmek ve çözmek için kurulmuş bir şirket. Amacı, düzenin kaosa doğru değil "Barış"tan yana değişimine katkı sağlamak.</span><span data-lang="en">A company built to analyze and solve the needs of a rapidly changing world. Its mission: to contribute to change not toward chaos, but toward "Peace".</span></p>
           <div class="sc-tech">
             <span class="sc-chip">Psikoloji</span><span class="sc-chip">Yapay Zeka</span>
             <span class="sc-chip">Otomasyon</span><span class="sc-chip">Strateji</span>
@@ -709,11 +750,11 @@ body::after{
         </div>
         <div class="sf-right" style="padding:4rem;position:relative">
           <div>
-            <div style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem">Metrikler</div>
+            <div style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem"><span data-lang="tr">Metrikler</span><span data-lang="en">Metrics</span></div>
             <div style="display:flex;flex-direction:column;gap:2.5rem">
-              <div><div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:var(--accent);line-height:1">3</div><div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.4rem">Aktif Startup</div></div>
-              <div><div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:var(--accent);line-height:1">2026</div><div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.4rem">Kuruluş Yılı</div></div>
-              <div><div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:var(--accent);line-height:1">∞</div><div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.4rem">Hedef</div></div>
+              <div><div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:var(--accent);line-height:1">3</div><div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.4rem"><span data-lang="tr">Aktif Startup</span><span data-lang="en">Active Startups</span></div></div>
+              <div><div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:var(--accent);line-height:1">2026</div><div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.4rem"><span data-lang="tr">Kuruluş Yılı</span><span data-lang="en">Founded</span></div></div>
+              <div><div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:var(--accent);line-height:1">∞</div><div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.4rem"><span data-lang="tr">Hedef</span><span data-lang="en">Goal</span></div></div>
             </div>
           </div>
           <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)">Keşfet →</div>
@@ -724,10 +765,10 @@ body::after{
       <div class="startup-card">
         <div class="sc-inner">
           <div class="sc-num">02</div>
-          <div class="sc-status"><div class="sc-dot" style="background:var(--muted2)"></div>Aktif · Büyüyor</div>
+          <div class="sc-status"><div class="sc-dot" style="background:var(--muted2)"></div><span data-lang="tr">Aktif · Büyüyor</span><span data-lang="en">Active · Growing</span></div>
           <div class="sc-name"><a href="https://www.webwibe.co/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:2px;transition:border-color .3s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--line2)'">Webwibe</a></div>
-          <div class="sc-tag">Dijital Varlık · Web Tasarım · 2025</div>
-          <p class="sc-desc">Web sitesi olmayan işletmeleri dijital ortamda var etmeyi amaçlayan bir startup. Şirketlere güncel sistemlerle hızlı, etkili ve modern web siteleri oluşturur.</p>
+          <div class="sc-tag"><span data-lang="tr">Dijital Varlık · Web Tasarım · 2025</span><span data-lang="en">Digital Presence · Web Design · 2025</span></div>
+          <p class="sc-desc"><span data-lang="tr">Web sitesi olmayan işletmeleri dijital ortamda var etmeyi amaçlayan bir startup.</span><span data-lang="en">A startup that brings businesses without a web presence into the digital world with modern, efficient websites.</span></p>
           <div class="sc-tech">
             <span class="sc-chip">Web Tasarım</span><span class="sc-chip">SEO</span><span class="sc-chip">CMS</span>
           </div>
@@ -739,10 +780,10 @@ body::after{
       <div class="startup-card">
         <div class="sc-inner">
           <div class="sc-num">03</div>
-          <div class="sc-status"><div class="sc-dot" style="background:var(--muted)"></div>Aktif · Büyüyor</div>
+          <div class="sc-status"><div class="sc-dot" style="background:var(--muted)"></div><span data-lang="tr">Aktif · Büyüyor</span><span data-lang="en">Active · Growing</span></div>
           <div class="sc-name">Upsawa</div>
-          <div class="sc-tag">Pazarlama · Strateji · Büyüme · 2025</div>
-          <p class="sc-desc">İşletmelere stratejik destek sağlayan bir firma. Reklam stratejilerini ve etkinliklerini düzenleyerek müşteri artışı ve devamlılığını sağlar.</p>
+          <div class="sc-tag"><span data-lang="tr">Pazarlama · Strateji · Büyüme · 2025</span><span data-lang="en">Marketing · Strategy · Growth · 2025</span></div>
+          <p class="sc-desc"><span data-lang="tr">İşletmelere stratejik destek sağlayan bir firma. Reklam stratejilerini ve etkinliklerini düzenleyerek müşteri artışı ve devamlılığını sağlar.</span><span data-lang="en">A firm providing strategic support to businesses. Designs advertising strategies and events to grow and retain customers.</span></p>
           <div class="sc-tech">
             <span class="sc-chip">Reklam</span><span class="sc-chip">Strateji</span><span class="sc-chip">Etkinlik</span>
           </div>
@@ -758,33 +799,33 @@ body::after{
 <div class="hr"></div>
 <section id="portfolio">
   <div class="section-inner">
-    <div class="sec-label">Geçmiş İşler <span>/ 03</span></div>
-    <h2 class="sec-title" style="margin-bottom:4rem">Bıraktığım <em>İzler</em></h2>
+    <div class="sec-label"><span data-lang="tr">Geçmiş İşler</span><span data-lang="en">Past Works</span> <span>/ 03</span></div>
+    <h2 class="sec-title" style="margin-bottom:4rem"><span data-lang="tr">Bıraktığım <em>İzler</em></span><span data-lang="en">My Past <em>Works</em></span></h2>
 
     <div class="portfolio-grid">
       <div class="work-row">
         <div class="wr-num">01</div>
         <div class="wr-body">
-          <div class="wr-title"><a href="https://medium.com/@barisyusuf/the-psychology-of-liking-and-disliking-with-yes-your-grace-2-b60e579ad58c" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line2);transition:border-color .3s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--line2)'">Psikoloji ve Oyunlar</a></div>
-          <div class="wr-desc">Oyunların psikolojik etkilerini ve beğeni/beğenmeme dinamiklerini inceleyen makale. Yes, Your Grace 2 üzerinden bir analiz.</div>
+          <div class="wr-title"><a href="https://medium.com/@barisyusuf/the-psychology-of-liking-and-disliking-with-yes-your-grace-2-b60e579ad58c" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line2);transition:border-color .3s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--line2)'"><span data-lang="tr">Psikoloji ve Oyunlar</span><span data-lang="en">Psychology & Games</span></a></div>
+          <div class="wr-desc"><span data-lang="tr">Oyunların psikolojik etkilerini ve beğeni/beğenmeme dinamiklerini inceleyen makale. Yes, Your Grace 2 üzerinden bir analiz.</span><span data-lang="en">An article exploring the psychological effects of games and the dynamics of liking/disliking. An analysis through Yes, Your Grace 2.</span></div>
         </div>
-        <div class="wr-meta"><span class="wr-type">Makale</span><span class="wr-year">2024</span></div>
+        <div class="wr-meta"><span class="wr-type"><span data-lang="tr">Makale</span><span data-lang="en">Article</span></span><span class="wr-year">2024</span></div>
       </div>
       <div class="work-row">
         <div class="wr-num">02</div>
         <div class="wr-body">
-          <div class="wr-title">Kontkatip Kuruluşu</div>
-          <div class="wr-desc">Instagram üzerinden alıntılar paylaşan bir sayfadan, büyük bir oluşumun ismini aldı. Kontkatip markasının temelleri atıldı.</div>
+          <div class="wr-title"><span data-lang="tr">Kontkatip Kuruluşu</span><span data-lang="en">Founding Kontkatip</span></div>
+          <div class="wr-desc"><span data-lang="tr">Instagram üzerinden alıntılar paylaşan bir sayfadan, büyük bir oluşumun ismini aldı. Kontkatip markasının temelleri atıldı.</span><span data-lang="en">From a page sharing quotes on Instagram, a greater entity took its name. The foundations of Kontkatip were laid.</span></div>
         </div>
-        <div class="wr-meta"><span class="wr-type">Proje</span><span class="wr-year">2024</span></div>
+        <div class="wr-meta"><span class="wr-type"><span data-lang="tr">Proje</span><span data-lang="en">Project</span></span><span class="wr-year">2024</span></div>
       </div>
       <div class="work-row">
         <div class="wr-num">03</div>
         <div class="wr-body">
-          <div class="wr-title"><a href="https://www.webwibe.co/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line2);transition:border-color .3s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--line2)'">Webwibe Tasarım Süreci</a></div>
-          <div class="wr-desc">Webwibe için marka kimliği, kullanıcı akışları ve müşteri web sitesi prototiplerinin oluşturulması.</div>
+          <div class="wr-title"><a href="https://www.webwibe.co/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line2);transition:border-color .3s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--line2)'"><span data-lang="tr">Webwibe Tasarım Süreci</span><span data-lang="en">Webwibe Design Process</span></a></div>
+          <div class="wr-desc"><span data-lang="tr">Webwibe için marka kimliği, kullanıcı akışları ve müşteri web sitesi prototiplerinin oluşturulması.</span><span data-lang="en">Brand identity, user flows, and client website prototypes created for Webwibe.</span></div>
         </div>
-        <div class="wr-meta"><span class="wr-type">Tasarım</span><span class="wr-year">2026</span></div>
+        <div class="wr-meta"><span class="wr-type"><span data-lang="tr">Tasarım</span><span data-lang="en">Design</span></span><span class="wr-year">2026</span></div>
       </div>
     </div>
 </section>
@@ -793,16 +834,16 @@ body::after{
 <div class="hr"></div>
 <section id="contact" style="background:var(--bg2)">
   <div class="section-inner">
-    <div class="sec-label">İletişim <span>/ 04</span></div>
+    <div class="sec-label"><span data-lang="tr">İletişim</span><span data-lang="en">Contact</span> <span>/ 04</span></div>
     <div class="contact-layout">
       <div>
-        <h2 class="contact-big">Konuşa<em>lım</em><span style="color:var(--accent2)">.</span></h2>
-        <p class="contact-sub">Bir fikriniz, bir teklifiniz ya da sadece merhaba demek istiyorsanız. Her mesajı okurum, çoğuna geri dönerim.</p>
+        <h2 class="contact-big"><span data-lang="tr">Konuşa<em>lım</em></span><span data-lang="en">Let's <em>Talk</em></span><span style="color:var(--accent2)">.</span></h2>
+        <p class="contact-sub"><span data-lang="tr">Bir fikriniz, bir teklifiniz ya da sadece merhaba demek istiyorsanız. Her mesajı okurum, çoğuna geri dönerim.</span><span data-lang="en">Have an idea, a proposal, or just want to say hello? I read every message and reply to most.</span></p>
 
         <div class="c-links">
           <a href="mailto:yusufbaris1074@gmail.com" class="c-link">
             <div class="cl-left">
-              <span class="cl-platform">E-posta</span>
+              <span class="cl-platform"><span data-lang="tr">E-posta</span><span data-lang="en">Email</span></span>
               <span class="cl-name">yusufbaris1074@gmail.com</span>
             </div>
             <span class="cl-arr">→</span>
@@ -838,14 +879,14 @@ body::after{
         <div class="avail-box">
           <div class="avail-dot-wrap">
             <div class="avail-dot"></div>
-            <span class="avail-status">Şu an müsaitim</span>
+            <span class="avail-status"><span data-lang="tr">Şu an müsaitim</span><span data-lang="en">Currently Available</span></span>
           </div>
-          <div class="avail-title">İşbirliği & Yeni Projeler</div>
-          <p class="avail-p">Yeni projeler ve işbirliklerine açığım. Özellikle psikoloji, eğitim teknolojisi ve sosyal etki alanlarındaki fırsatlarla ilgileniyorum. Bir konuşma başlatmaktan çekinme.</p>
+          <div class="avail-title"><span data-lang="tr">İşbirliği & Yeni Projeler</span><span data-lang="en">Collaboration & New Projects</span></div>
+          <p class="avail-p"><span data-lang="tr">Yeni projeler ve işbirliklerine açığım. Özellikle psikoloji, eğitim teknolojisi ve sosyal etki alanlarındaki fırsatlarla ilgileniyorum. Bir konuşma başlatmaktan çekinme.</span><span data-lang="en">I'm open to new projects and collaborations. Especially interested in psychology, ed-tech, and social impact. Don't hesitate to reach out.</span></p>
         </div>
 
         <div style="border:1px solid var(--line);padding:2.5rem">
-          <div style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem">Konum & Zaman</div>
+          <div style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem"><span data-lang="tr">Konum & Zaman</span><span data-lang="en">Location & Time</span></div>
           <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
             <span style="font-size:1.5rem">🇵🇱</span>
             <div>
@@ -854,7 +895,7 @@ body::after{
             </div>
           </div>
           <div style="height:1px;background:var(--line);margin:1.25rem 0"></div>
-          <div style="font-size:.75rem;color:var(--muted2);line-height:1.7;font-weight:300">Yanıt süresi genellikle 24–48 saat. Acil konular için e-posta tercih edin.</div>
+          <div style="font-size:.75rem;color:var(--muted2);line-height:1.7;font-weight:300"><span data-lang="tr">Yanıt süresi genellikle 24–48 saat. Acil konular için e-posta tercih edin.</span><span data-lang="en">Response time is usually 24–48 hours. For urgent matters, email is preferred.</span></div>
         </div>
       </div>
     </div>
@@ -865,7 +906,7 @@ body::after{
 <footer>
   <div class="foot-brand">kontkatip</div>
   <div style="text-align:center">
-    <div class="foot-copy" style="margin-bottom:.5rem">Yusuf Barış · Varşova, Polonya</div>
+    <div class="foot-copy" style="margin-bottom:.5rem"><span data-lang="tr">Yusuf Barış · Varşova, Polonya</span><span data-lang="en">Yusuf Barış · Warsaw, Poland</span></div>
   </div>
   <div class="foot-copy">© 2026 Kontkatip</div>
 </footer>
@@ -903,6 +944,21 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(t)t.scrollIntoView({behavior:'smooth'});
   });
 });
+
+// Language switcher
+function setLang(lang) {
+  document.getElementById('html-root').setAttribute('lang', lang);
+  document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  localStorage.setItem('lang', lang);
+}
+// Init from storage or browser preference
+(function(){
+  const saved = localStorage.getItem('lang');
+  const preferred = navigator.language.startsWith('tr') ? 'tr' : 'en';
+  setLang(saved || preferred);
+})();
+
 </script>
 </body>
 </html>
