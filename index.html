@@ -259,17 +259,18 @@ section{padding:8rem 3rem}
   font-size:1.5rem;font-weight:400;color:var(--white);
   margin:4rem 0 2.5rem;
 }
-.tl{position:relative;padding-left:2.5rem}
+.tl{position:relative;padding-left:3rem}
 .tl::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;
+  content:'';position:absolute;left:0;top:.4rem;bottom:1rem;
   width:1px;background:linear-gradient(to bottom,var(--accent2),transparent);
 }
 .tl-item{position:relative;margin-bottom:2.5rem}
 .tl-dot{
-  position:absolute;left:-2.9rem;top:.35rem;
+  position:absolute;left:calc(-3rem);top:.35rem;
   width:9px;height:9px;border-radius:50%;
   border:1px solid var(--accent2);
   background:var(--bg);
+  margin-left:-4px;
 }
 .tl-yr{font-size:.6rem;letter-spacing:.18em;color:var(--accent2);text-transform:uppercase;margin-bottom:.4rem}
 .tl-t{font-size:.9rem;font-weight:500;color:var(--text);margin-bottom:.3rem}
@@ -537,8 +538,8 @@ body::after{
   .bio-info{position:static}
 
   /* Timeline */
-  .tl{padding-left:2rem}
-  .tl-dot{left:-2.4rem}
+  .tl{padding-left:2.5rem}
+  .tl-dot{left:calc(-2.5rem);margin-left:-4px;transform:none}
   .timeline-title{font-size:1.3rem;margin:3rem 0 2rem}
 
   /* Startups */
@@ -706,7 +707,7 @@ html[lang="en"] blockquote[data-lang="tr"]{display:none}
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2004</div><div class="tl-t"><span data-lang="tr">Başlangıç</span><span data-lang="en">Beginning</span></div><div class="tl-d"><span data-lang="tr">İstanbul'da doğdum. Merak, doğuştan gelen bir ihtiyaç.</span><span data-lang="en">Born in Istanbul. Curiosity was never a choice — it was a necessity.</span></div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2022</div><div class="tl-t"><span data-lang="tr">Ege Üniversitesi</span><span data-lang="en">Ege University</span></div><div class="tl-d"><span data-lang="tr">Sosyoloji bölümüne başladım. Bir yıl sonra bunun benim için yetmediğini anladım.</span><span data-lang="en">Started Sociology. A year later, I realized it wasn't enough for me.</span></div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2023</div><div class="tl-t"><span data-lang="tr">SWPS Üniversitesi</span><span data-lang="en">SWPS University</span></div><div class="tl-d"><span data-lang="tr">Varşova'ya taşındım. SWPS'te İngilizce hazırlık eğitimi aldım.</span><span data-lang="en">Moved to Warsaw. Completed English preparation at SWPS.</span></div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2024</div><div class="tl-t"><span data-lang="tr">Vizja Üniversitesi</span><span data-lang="en">Vizja University</span></div><div class="tl-d"><span data-lang="tr">Psikoloji bölümüne başladım. Yapay zeka ile kesişimini keşfettim.</span><span data-lang="en">Started Psychology. Discovered its intersection with AI.</span></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2024</div><div class="tl-t"><span data-lang="tr">Vizja Üniversitesi</span><span data-lang="en">Vizja University</span></div><div class="tl-d"><span data-lang="tr">Psikoloji bölümüne başladım. Case Study ve EEG derslerine girdim. Yapay zeka ile kesişimini keşfettim.</span><span data-lang="en">Started Psychology. Attended Case Study and EEG courses. Discovered its intersection with AI.</span></div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-yr">2026</div><div class="tl-t"><span data-lang="tr">Kontkatip</span><span data-lang="en">Kontkatip</span></div><div class="tl-d"><span data-lang="tr">Kendi markamı kurdum. Bir düşünce biçiminin adı.</span><span data-lang="en">Founded my own brand. The name of a way of thinking.</span></div></div>
           <div class="tl-item" style="margin-bottom:0"><div class="tl-dot" style="background:var(--accent2)"></div><div class="tl-yr">→</div><div class="tl-t"><span data-lang="tr">Süregelen</span><span data-lang="en">Ongoing</span></div><div class="tl-d"><span data-lang="tr">Öğreniyorum, inşa ediyorum, anlıyorum.</span><span data-lang="en">Learning, building, understanding.</span></div></div>
         </div>
@@ -842,10 +843,10 @@ html[lang="en"] blockquote[data-lang="tr"]{display:none}
         <p class="contact-sub"><span data-lang="tr">Bir fikriniz, bir teklifiniz ya da sadece merhaba demek istiyorsanız. Her mesajı okurum, çoğuna geri dönerim.</span><span data-lang="en">Have an idea, a proposal, or just want to say hello? I read every message and reply to most.</span></p>
 
         <div class="c-links">
-          <a href="mailto:yusufbaris1074@gmail.com" class="c-link">
+          <a href="mailto:contact@kontkatip.com" class="c-link">
             <div class="cl-left">
               <span class="cl-platform"><span data-lang="tr">E-posta</span><span data-lang="en">Email</span></span>
-              <span class="cl-name">yusufbaris1074@gmail.com</span>
+              <span class="cl-name">contact@kontkatip.com</span>
             </div>
             <span class="cl-arr">→</span>
           </a>
@@ -856,10 +857,10 @@ html[lang="en"] blockquote[data-lang="tr"]{display:none}
             </div>
             <span class="cl-arr">→</span>
           </a>
-          <a href="https://github.com/katipmerci" class="c-link">
+          <a href="https://twitter.com/kontkatip" target="_blank" rel="noopener" class="c-link">
             <div class="cl-left">
-              <span class="cl-platform">GitHub</span>
-              <span class="cl-name">github.com/katipmerci</span>
+              <span class="cl-platform">Twitter / X</span>
+              <span class="cl-name">@kontkatip</span>
             </div>
             <span class="cl-arr">→</span>
           </a>
